@@ -60,8 +60,13 @@ shows a byte meter and disables *Practise* above 255 bytes.
 
 ## On-chain runs
 
-See `RUNTIME_EVIDENCE.md`: the Intelligent Contract run (11 transactions, every must-verify row PASS) and the Project run
-through this app, one hash per row.
+See `RUNTIME_EVIDENCE.md`: the Project run through this app (4 transactions) and the Intelligent Contract run (11
+transactions, every must-verify row PASS), one hash per row.
+
+Project run through the app: one sentence, "After the flood, the bank was covered in broken branches.", was read
+**OTHER_SENSE** on a money-sense card (back tomorrow) and **RIGHT_SENSE** on a river-sense card (back in 2 days); a
+sentence without the whole word, a card not yet due, and another wallet's card each disabled *Practise* with the
+contract's sentence. Every result was reported only after the app re-read the card: **PASS**.
 
 Intelligent Contract run: R1 → RIGHT_SENSE and O1 → OTHER_SENSE on two river-sense cards; on two money-sense cards R3 →
 OTHER_SENSE and O3 → RIGHT_SENSE; the not-due, owner and whole-word reverts each fired with the contract's sentence:

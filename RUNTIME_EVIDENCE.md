@@ -9,7 +9,34 @@ Both deployments run the same frozen source, SHA-256 `a3c8003f4a6d9118d3c1580b6a
 
 ## Project run (address `0x139a515380ab68eA4c9ae5f9005D4Cd365888ED5`, through this app)
 
-Deploy tx [`0x72bf8f55…71f7591d`](https://explorer-studio.genlayer.com/tx/0x72bf8f55a93fc0c2560f38b75a3fac5b482bf016b65960cd6049935971f7591d). The run through the app is recorded here once it has been made.
+Run date 2026-10-06 (UTC day 20732), app at https://right-sense-gamma.vercel.app, MetaMask on StudioNet. Deploy tx [`0x72bf8f55…71f7591d`](https://explorer-studio.genlayer.com/tx/0x72bf8f55a93fc0c2560f38b75a3fac5b482bf016b65960cd6049935971f7591d). **4 transactions** sent from the app, all FINALIZED with SUCCESS.
+
+Wallets: **A** = learner `0x3065E31B1D993d7C0D59E6786844cBa56780B2d3` · **B** = another wallet `0x5a52d040581A76e2C032542855D31480f2ea7097` (reads only).
+Cards of A (ids shown by the app before signing): money sense `f6451b5e220ab79ab018f992897ad9f45be14ca351354e37605a8866b70581d4` · river sense `724ea068db37ca6731f26d69c0069c641507dfa68b35fbb97b1938b79acc79f1`.
+
+| # | Wallet | Action in the app | Tx hash | Result (read back by the app from the accepted state) |
+|---|---|---|---|---|
+| P1 | A | Add `bank` = `a business that keeps and lends money` | [`0xe36bdfd9…0f23b81b`](https://explorer-studio.genlayer.com/tx/0xe36bdfd9461d1dae589857e9dfbd420197e5c4bc19a6b524588f1d910f23b81b) | "New — due today", interval 1 |
+| P2 | A | Type `We banked the fire before bed.` on that card | — (not sent) | *Practise* disabled with *The sentence does not use the term* (screenshot 2) |
+| P3 | A | Practise the money card: `After the flood, the bank was covered in broken branches.` | [`0xc0ef7ea6…4f3ffc2c`](https://explorer-studio.genlayer.com/tx/0xc0ef7ea6f889e473bfc6307207ca41919fa6632d91c2c294413c863e4f3ffc2c) | **OTHER_SENSE** — interval 1, back on day 20733 |
+| P4 | A | Add `bank` = `the land along the side of a river` | [`0x04a4582b…5dff1a8c`](https://explorer-studio.genlayer.com/tx/0x04a4582b5f52b9a83c1b4fe823afe07912bebb8c646f928867e2ff0e5dff1a8c) | "New — due today", interval 1 |
+| P5 | A | Practise the river card with the **same sentence** | [`0x5339f645…dfa4dad2`](https://explorer-studio.genlayer.com/tx/0x5339f645beeb0385a6f004283f75b3ca63cb053d4dc6241f188b986ddfa4dad2) | **RIGHT_SENSE** — interval 2, back on day 20734 (screenshot 1) |
+| P6 | A | Both cards after practice | — (read) | *Practise* disabled with *This card is not due yet* on both |
+| P7 | B | Open A's deck by wallet | — (read) | *Practise* disabled with *Only the card's owner may practise it* on both cards (screenshot 3) |
+
+The same sentence on two cards of the same term gave opposite outcomes, following the declared sense. The app reported
+each practice only after re-reading the card: one more review, and an interval and due day that match the outcome
+(`src/lib/verify.ts`).
+
+Screenshots:
+
+![One sentence, two declared senses: OTHER_SENSE (back tomorrow) and RIGHT_SENSE (back in 2 days)](docs/evidence/1-same-sentence-two-senses.png)
+
+![A sentence without the whole word: Practise disabled with the contract's sentence](docs/evidence/2-whole-word-refused.png)
+
+![Another wallet opens the deck: Practise disabled for the owner check](docs/evidence/3-not-the-owner.png)
+
+Also: `docs/evidence/1a-money-card-other-sense.png` (the money-sense card right after P3).
 
 ## Intelligent Contract run (address `0x8A38F1c8c3FF97fe67AE45dD4c029fAF9C92C6f4`, Studio)
 

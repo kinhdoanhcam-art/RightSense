@@ -15,6 +15,7 @@ is next due.
 | Contract source | `contracts/WordSense.py` (SHA-256 in `SOURCE_SHA256.txt`) |
 | Project deployment | [`0x139a515380ab68eA4c9ae5f9005D4Cd365888ED5`](https://explorer-studio.genlayer.com/address/0x139a515380ab68eA4c9ae5f9005D4Cd365888ED5) |
 | Intelligent Contract | WordSense — the same frozen source, deployed separately at [`0x8A38F1c8c3FF97fe67AE45dD4c029fAF9C92C6f4`](https://explorer-studio.genlayer.com/address/0x8A38F1c8c3FF97fe67AE45dD4c029fAF9C92C6f4) |
+| Live app | https://right-sense-gamma.vercel.app |
 | Evidence | `RUNTIME_EVIDENCE.md` (one tx hash per row) · `TESTING.md` |
 
 ## What it does
@@ -33,7 +34,11 @@ model, that the sentence contains the term as a whole word (`banked` is refused)
 A new card is due on the day it is added; a card answered right every time comes back after 2, 4, 8, 16 and then every
 32 days. On StudioNet, "After the flood, the bank was covered in broken branches." and "After the crash, the bank was
 covered in angry headlines." share one frame; on a card declaring `a business that keeps and lends money` the first was
-read **OTHER_SENSE** and the second **RIGHT_SENSE** — the outcome follows the sense the learner declared.
+read **OTHER_SENSE** and the second **RIGHT_SENSE** — the outcome follows the sense the learner declared. Through this
+app, the flood sentence on a money-sense card was read OTHER_SENSE (back tomorrow) and the very same sentence on a
+river-sense card RIGHT_SENSE (back in 2 days).
+
+![One sentence, two declared senses](docs/evidence/1-same-sentence-two-senses.png)
 
 Only the owner practises a card, only when it is due, and each sentence once per card. Unclear readings count as
 OTHER_SENSE, so a card never skips ahead on a guess.
