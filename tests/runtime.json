@@ -1,0 +1,236 @@
+{
+ "contract": "WordSense",
+ "wallets": {
+  "A": "learner A (A's own deck)",
+  "B": "learner B (B's own deck)"
+ },
+ "methods": {
+  "add_card": [
+   "term",
+   "sense"
+  ],
+  "practice": [
+   "card_id",
+   "sentence"
+  ],
+  "get_card": [
+   "card_id"
+  ],
+  "get_deck": [
+   "wallet"
+  ]
+ },
+ "rows": [
+  {
+   "n": 1,
+   "wallet": "A",
+   "method": "add_card",
+   "args": [
+    "bank",
+    "the land along the side of a river"
+   ],
+   "save": {
+    "name": "A1",
+    "payload": [
+     "L:WORD_SENSE:CARD:V1|",
+     "sender",
+     "L:|",
+     "len(norm(A0))",
+     "L:|",
+     "norm(A0)",
+     "L:|",
+     "len(norm(A1))",
+     "L:|",
+     "norm(A1)"
+    ]
+   },
+   "expect": "card A1, interval 1; get_card(A1): due_day == today, due_now true"
+  },
+  {
+   "n": 2,
+   "wallet": "B",
+   "method": "add_card",
+   "args": [
+    "bank",
+    "the land along the side of a river"
+   ],
+   "save": {
+    "name": "B1",
+    "payload": [
+     "L:WORD_SENSE:CARD:V1|",
+     "sender",
+     "L:|",
+     "len(norm(A0))",
+     "L:|",
+     "norm(A0)",
+     "L:|",
+     "len(norm(A1))",
+     "L:|",
+     "norm(A1)"
+    ]
+   },
+   "expect": "card B1 (a different id from A1), due_day == today"
+  },
+  {
+   "n": 3,
+   "wallet": "A",
+   "method": "practice",
+   "args": [
+    "$A1",
+    "We sat on the bank and watched the boats drift past."
+   ],
+   "expect": "RIGHT_SENSE; interval 2, due_day = today + 2"
+  },
+  {
+   "n": 4,
+   "wallet": "B",
+   "method": "practice",
+   "args": [
+    "$B1",
+    "We sat in the bank and watched the clerks count notes."
+   ],
+   "expect": "OTHER_SENSE; interval 1, due_day = today + 1"
+  },
+  {
+   "n": 5,
+   "wallet": "A",
+   "method": "practice",
+   "args": [
+    "$A1",
+    "The heron stood very still on the muddy bank."
+   ],
+   "revert": "This card is not due yet",
+   "expect": "revert *This card is not due yet*"
+  },
+  {
+   "n": 6,
+   "wallet": "B",
+   "method": "practice",
+   "args": [
+    "$A1",
+    "She tied the canoe to a willow on the far bank."
+   ],
+   "revert": "Only the card's owner may practise it",
+   "expect": "revert *Only the card's owner may practise it*"
+  },
+  {
+   "n": 7,
+   "wallet": "A",
+   "method": "add_card",
+   "args": [
+    "bank",
+    "a business that keeps and lends money"
+   ],
+   "save": {
+    "name": "A2",
+    "payload": [
+     "L:WORD_SENSE:CARD:V1|",
+     "sender",
+     "L:|",
+     "len(norm(A0))",
+     "L:|",
+     "norm(A0)",
+     "L:|",
+     "len(norm(A1))",
+     "L:|",
+     "norm(A1)"
+    ]
+   },
+   "expect": "card A2 (the money sense), due_day == today"
+  },
+  {
+   "n": 8,
+   "wallet": "A",
+   "method": "practice",
+   "args": [
+    "$A2",
+    "We banked the fire before bed."
+   ],
+   "revert": "The sentence does not use the term",
+   "expect": "revert *The sentence does not use the term*"
+  },
+  {
+   "n": 9,
+   "wallet": "A",
+   "method": "practice",
+   "args": [
+    "$A2",
+    "After the flood, the bank was covered in broken branches."
+   ],
+   "expect": "OTHER_SENSE; interval 1, due_day = today + 1"
+  },
+  {
+   "n": 10,
+   "wallet": "B",
+   "method": "add_card",
+   "args": [
+    "bank",
+    "a business that keeps and lends money"
+   ],
+   "save": {
+    "name": "B2",
+    "payload": [
+     "L:WORD_SENSE:CARD:V1|",
+     "sender",
+     "L:|",
+     "len(norm(A0))",
+     "L:|",
+     "norm(A0)",
+     "L:|",
+     "len(norm(A1))",
+     "L:|",
+     "norm(A1)"
+    ]
+   },
+   "expect": "card B2 (the money sense)"
+  },
+  {
+   "n": 11,
+   "wallet": "B",
+   "method": "practice",
+   "args": [
+    "$B2",
+    "After the crash, the bank was covered in angry headlines."
+   ],
+   "expect": "RIGHT_SENSE; interval 2, due_day = today + 2"
+  },
+  {
+   "n": 12,
+   "calls": [
+    {
+     "kind": "view",
+     "method": "get_deck",
+     "args": [
+      "$A"
+     ]
+    },
+    {
+     "kind": "view",
+     "method": "get_deck",
+     "args": [
+      "$B"
+     ]
+    }
+   ],
+   "expect": "read: A — A2 (interval 1, today + 1) then A1 (interval 2, today + 2); B — B1 (interval 1, today + 1) then B2 (interval 2, today + 2)"
+  }
+ ],
+ "caps": [
+  {
+   "label": "a 30-character term with a 100-character sense (both caps)",
+   "method": "add_card",
+   "args": [
+    "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "x*100"
+   ]
+  },
+  {
+   "label": "a sentence at the 140-character cap",
+   "method": "practice",
+   "args": [
+    "$A1",
+    "x*140"
+   ]
+  }
+ ]
+}

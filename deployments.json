@@ -1,0 +1,8 @@
+{
+  "network": "GenLayer StudioNet",
+  "chain_id": 61999,
+  "contract_file": "contracts/WordSense.py",
+  "source_sha256": "a3c8003f4a6d9118d3c1580b6a31af649520b5e4a036259ef98b06f672608f76",
+  "intelligent_contract": "0x8A38F1c8c3FF97fe67AE45dD4c029fAF9C92C6f4",
+  "project": "0x139a515380ab68eA4c9ae5f9005D4Cd365888ED5"
+}

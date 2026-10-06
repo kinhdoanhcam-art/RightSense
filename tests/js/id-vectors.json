@@ -1,0 +1,127 @@
+{
+  "owner": "0x3065E31B1D993d7C0D59E6786844cBa56780B2d3",
+  "cards": [
+    {
+      "term": "bank",
+      "sense": "the land along the side of a river",
+      "card_id": "724ea068db37ca6731f26d69c0069c641507dfa68b35fbb97b1938b79acc79f1"
+    },
+    {
+      "term": "bank",
+      "sense": "a business that keeps and lends money",
+      "card_id": "f6451b5e220ab79ab018f992897ad9f45be14ca351354e37605a8866b70581d4"
+    },
+    {
+      "term": "  Bank ",
+      "sense": " the land   along the side\tof a river ",
+      "card_id": "b7bbf762b63b57f95b399eba7dd36f39b511b344db2de51ab09dacf04f32205e"
+    },
+    {
+      "term": "take off",
+      "sense": "of a plane: to leave the ground",
+      "card_id": "5b1b6da7e3ed05c9e4b59e51f1156ca65855ede42a0c09601be02b661fb803f1"
+    },
+    {
+      "term": "\u001cpitch\u001f",
+      "sense": "a sports fieldfor football",
+      "card_id": "aed4d371530393f7c6ce6d4ac71f2c6937188ba26aa5dedc00fddeda24954b90"
+    },
+    {
+      "term": "café",
+      "sense": "a small restaurant 　serving coffee",
+      "card_id": "b8ec5fb58ab3513ec46efbf17dd02c6bf0e3ea4c268d1ad8bf844ccc88f5133b"
+    },
+    {
+      "term": "﻿spring",
+      "sense": "the season after winter",
+      "card_id": "b61066fa8e201acbdbc200040e62d3bcf2d39f729c1e3abf45d4e0bf3241a01e"
+    },
+    {
+      "term": "naïve",
+      "sense": "lacking experience 🌱",
+      "card_id": "cde19e6fdef50edd03bfa59e47bfb08ed8f976107f48e87e18182ca6e8233430"
+    }
+  ],
+  "matches": [
+    {
+      "sentence": "We sat on the bank and watched the boats drift past.",
+      "term": "bank",
+      "uses": true
+    },
+    {
+      "sentence": "The bank's new card.",
+      "term": "bank",
+      "uses": true
+    },
+    {
+      "sentence": "BANK holiday",
+      "term": "bank",
+      "uses": true
+    },
+    {
+      "sentence": "We banked the fire before bed.",
+      "term": "bank",
+      "uses": false
+    },
+    {
+      "sentence": "The banks were full.",
+      "term": "bank",
+      "uses": false
+    },
+    {
+      "sentence": "A riverbank path.",
+      "term": "bank",
+      "uses": false
+    },
+    {
+      "sentence": "The bank-side path.",
+      "term": "bank",
+      "uses": true
+    },
+    {
+      "sentence": "The plane will take   off soon.",
+      "term": "take off",
+      "uses": true
+    },
+    {
+      "sentence": "takeoff was smooth",
+      "term": "take off",
+      "uses": false
+    },
+    {
+      "sentence": "Le café est ouvert.",
+      "term": "café",
+      "uses": true
+    },
+    {
+      "sentence": "Le cafés sont ouverts.",
+      "term": "café",
+      "uses": false
+    },
+    {
+      "sentence": "bankbank bank",
+      "term": "bank",
+      "uses": true
+    },
+    {
+      "sentence": "Ébank and bank2",
+      "term": "bank",
+      "uses": true
+    },
+    {
+      "sentence": "",
+      "term": "bank",
+      "uses": false
+    }
+  ],
+  "used": [
+    {
+      "sentence": "We sat on the bank.",
+      "key": "abababababababababababababababababababababababababababababababab|7bf1d1d735ebeb17db1c402673c7a8b6a5d3c25faf205153e85906f168f9d244"
+    },
+    {
+      "sentence": "  WE SAT on  the bank. ",
+      "key": "abababababababababababababababababababababababababababababababab|7bf1d1d735ebeb17db1c402673c7a8b6a5d3c25faf205153e85906f168f9d244"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+ "total": 30,
+ "caught": 30,
+ "results": [
+  {
+   "name": "RIGHT_SENSE does not double the interval",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_tooth_same_sentence_flips_with_the_declared_sense"
+  },
+  {
+   "name": "interval has no 32-day cap",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_right_doubles_up_to_the_cap_of_32"
+  },
+  {
+   "name": "OTHER_SENSE keeps the interval instead of collapsing to 1",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_other_sense_collapses_the_interval_to_one"
+  },
+  {
+   "name": "next due day ignores the new interval",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_tooth_same_sentence_flips_with_the_declared_sense"
+  },
+  {
+   "name": "due check off by one (due day itself refused)",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_tooth_same_sentence_flips_with_the_declared_sense"
+  },
+  {
+   "name": "new card not due on the day it is added",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_tooth_same_sentence_flips_with_the_declared_sense"
+  },
+  {
+   "name": "rights not counted",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_right_doubles_up_to_the_cap_of_32"
+  },
+  {
+   "name": "fail-safe flipped on unparseable output",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_fail_safe_on_unparseable_output"
+  },
+  {
+   "name": "unknown label maps to RIGHT_SENSE",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_fail_safe_on_unknown_label - As..."
+  },
+  {
+   "name": "validator accepts any valid label",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_validator_rejects_disagreement_and_bad_shapes"
+  },
+  {
+   "name": "anyone may practise a card",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_runtime_table_in_order - Assert..."
+  },
+  {
+   "name": "due checked before owner",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_runtime_table_in_order - Assert..."
+  },
+  {
+   "name": "same sentence may be reused",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_sentence_variants_are_the_same_sentence"
+  },
+  {
+   "name": "used key not lower-cased (case grinding)",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_id_vectors.py::test_vectors_match_contract - Asser..."
+  },
+  {
+   "name": "used key not whitespace-normalized (spacing grinding)",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_id_vectors.py::test_vectors_match_contract - Asser..."
+  },
+  {
+   "name": "term check skipped",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_term_check_runs_before_the_model"
+  },
+  {
+   "name": "term check: no boundary after the term (banks / banked accepted)",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_id_vectors.py::test_vectors_match_contract - Asser..."
+  },
+  {
+   "name": "term check: no boundary before the term (riverbank accepted)",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_id_vectors.py::test_vectors_match_contract - Asser..."
+  },
+  {
+   "name": "term check is case-sensitive",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_id_vectors.py::test_vectors_match_contract - Asser..."
+  },
+  {
+   "name": "term check looks at the first occurrence only",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_id_vectors.py::test_vectors_match_contract - Asser..."
+  },
+  {
+   "name": "reserved token not checked on sentences",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_revert_reserved_token - Asserti..."
+  },
+  {
+   "name": "reserved token not checked on the sense",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_revert_reserved_token - Asserti..."
+  },
+  {
+   "name": "deck cap off by one (51 cards)",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_revert_deck_full - AssertionErr..."
+  },
+  {
+   "name": "sentence length cap off by one",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_revert_sentence_too_long - genl..."
+  },
+  {
+   "name": "card id ignores whitespace normalization",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_whitespace_variants_share_one_card_id"
+  },
+  {
+   "name": "owner missing from the card id",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_id_vectors.py::test_vectors_match_contract - Asser..."
+  },
+  {
+   "name": "fence strip: no gap and a single pass (cross-token rebuild survives)",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_fence_strip_is_fixed_point - As..."
+  },
+  {
+   "name": "wallet leaks into the prompt",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_tooth_same_sentence_flips_with_the_declared_sense"
+  },
+  {
+   "name": "day helper: leap shift on the wrong months",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_today_matches_python_date_arithmetic"
+  },
+  {
+   "name": "deck view not sorted by due day",
+   "status": "CAUGHT",
+   "first_failure": "FAILED tests/contract/test_wordsense.py::test_runtime_table_in_order - Assert..."
+  }
+ ]
+}
